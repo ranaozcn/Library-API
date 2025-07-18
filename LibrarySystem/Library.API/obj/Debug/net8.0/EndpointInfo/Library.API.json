@@ -1,0 +1,487 @@
+{
+  "x-generator": "NSwag v14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Library.API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "LibraryAPIEndpointsUserEndpointGetAllUsersEndpoint",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryAPIEndpointsUserEndpointGetAllUsersResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "LibraryAPIEndpointsUserEndointAddUserEndpoint",
+        "requestBody": {
+          "x-name": "CreateUserRequest",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LibraryAPIEndpointsUserEndointCreateUserRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryAPIEndpointsUserEndointCreateUserResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/loans/borrow": {
+      "post": {
+        "tags": [
+          "Loans"
+        ],
+        "operationId": "LibraryAPIEndpointsLoanEndpointBorrowBookEndpoint",
+        "requestBody": {
+          "x-name": "BorrowBookRequest",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LibraryAPIEndpointsLoanEndpointBorrowBookRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryAPIEndpointsLoanEndpointBorrowBookResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/loans": {
+      "get": {
+        "tags": [
+          "Loans"
+        ],
+        "operationId": "LibraryAPIEndpointsLoanEndpointGetAllLoansEndpoint",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryAPIEndpointsLoanEndpointGetAllLoansResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/loans/user/{userId}": {
+      "get": {
+        "tags": [
+          "Loans"
+        ],
+        "operationId": "LibraryAPIEndpointsLoanEndpointGetUserLoansEndpoint",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LibraryAPIEndpointsLoanEndpointGetUserLoansResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/loans/return": {
+      "post": {
+        "tags": [
+          "Loans"
+        ],
+        "operationId": "LibraryAPIEndpointsLoanEndpointReturnBookEndpoint",
+        "requestBody": {
+          "x-name": "ReturnBookRequest",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LibraryAPIEndpointsLoanEndpointReturnBookRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryAPIEndpointsLoanEndpointReturnBookResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/books": {
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "operationId": "LibraryAPIEndpointsBookEndpointAddBookEndpoint",
+        "requestBody": {
+          "x-name": "CreateBookRequest",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LibraryAPIEndpointsBookEndpointCreateBookRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryAPIEndpointsBookEndpointCreateBookResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "operationId": "LibraryAPIEndpointsBookEndpointGetBooksEndpoint",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryAPIEndpointsBookEndpointGetAllBooksResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LibraryAPIEndpointsUserEndpointGetAllUsersResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LibraryEntitiesUser"
+            }
+          }
+        }
+      },
+      "LibraryEntitiesUser": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "loans": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/LibraryEntitiesLoan"
+            }
+          }
+        }
+      },
+      "LibraryEntitiesLoan": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "loanID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "borrowed": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "returned": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "user": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/LibraryEntitiesUser"
+              }
+            ]
+          },
+          "bookId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "book": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/LibraryEntitiesBook"
+              }
+            ]
+          }
+        }
+      },
+      "LibraryEntitiesBook": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "bookID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "author": {
+            "type": "string",
+            "nullable": true
+          },
+          "isAvailable": {
+            "type": "boolean"
+          },
+          "loans": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/LibraryEntitiesLoan"
+            }
+          }
+        }
+      },
+      "LibraryAPIEndpointsUserEndointCreateUserResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "LibraryAPIEndpointsUserEndointCreateUserRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userName": {
+            "type": "string"
+          }
+        }
+      },
+      "LibraryAPIEndpointsLoanEndpointBorrowBookResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "loanId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "returned": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "LibraryAPIEndpointsLoanEndpointBorrowBookRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bookId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "LibraryAPIEndpointsLoanEndpointGetAllLoansResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "loans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LibraryEntitiesLoan"
+            }
+          }
+        }
+      },
+      "LibraryAPIEndpointsLoanEndpointGetUserLoansResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "loanId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bookTitle": {
+            "type": "string"
+          },
+          "borrowed": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "returned": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "LibraryAPIEndpointsLoanEndpointGetUserLoansRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "LibraryAPIEndpointsLoanEndpointReturnBookResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "LibraryAPIEndpointsLoanEndpointReturnBookRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "loanId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "LibraryAPIEndpointsBookEndpointCreateBookResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "bookId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "LibraryAPIEndpointsBookEndpointCreateBookRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "isAvailable": {
+            "type": "boolean"
+          }
+        }
+      },
+      "LibraryAPIEndpointsBookEndpointGetAllBooksResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "books": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LibraryEntitiesBook"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "JWTBearerAuth": {
+        "type": "http",
+        "description": "Enter a JWT token to authorize the requests...",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
