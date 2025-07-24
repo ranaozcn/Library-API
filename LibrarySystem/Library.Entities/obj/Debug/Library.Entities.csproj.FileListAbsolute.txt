@@ -1,6 +1,0 @@
-C:\Web Api .Net Proje\LibrarySystem\Library.Entities\bin\Debug\Library.Entities.dll
-C:\Web Api .Net Proje\LibrarySystem\Library.Entities\bin\Debug\Library.Entities.pdb
-C:\Web Api .Net Proje\LibrarySystem\Library.Entities\obj\Debug\Library.Entities.csproj.AssemblyReference.cache
-C:\Web Api .Net Proje\LibrarySystem\Library.Entities\obj\Debug\Library.Entities.csproj.CoreCompileInputs.cache
-C:\Web Api .Net Proje\LibrarySystem\Library.Entities\obj\Debug\Library.Entities.dll
-C:\Web Api .Net Proje\LibrarySystem\Library.Entities\obj\Debug\Library.Entities.pdb
